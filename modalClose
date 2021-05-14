@@ -1,0 +1,8 @@
+modalClose.forEach(item => {
+    item.addEventListener('click', event => {
+        let currentModal = event.currentTarget.closest('.modal');
+
+        currentModal.classList.remove('show');
+        body.classList.remove('no-scroll');
+    });
+});
