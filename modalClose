@@ -1,3 +1,6 @@
+const body = document.body;
+const modalClose = document.querySelectorAll('.modal__close');
+
 modalClose.forEach(item => {
     item.addEventListener('click', event => {
         let currentModal = event.currentTarget.closest('.modal');
