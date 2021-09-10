@@ -1,0 +1,39 @@
+const mysql = require('mysql');
+
+const connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    database: "db",
+    password: "pas"
+});
+
+connection.connect(err => {
+    if (err) {
+        console.log(err);
+        return err;
+        //return console.error("Ошибка: " + err.message);
+    }
+    else{
+        console.log("Подключение к серверу MySQL успешно установлено");
+    }
+});
+
+let query = "SELECT * FROM cats";
+
+connection.query(query, (err, result, field) => {
+    console.log(err);
+    console.log(result);
+    console.log(result[1][`title`]);
+    //console.log(field);
+});
+
+connection.end( err => {
+    if (err) {
+        console.log(err);
+        return err;
+        //return console.error("Ошибка: " + err.message);
+    }
+    else{
+        console.log("Отключение от сервера MySQL успешно завершено");
+    }
+});
