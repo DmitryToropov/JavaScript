@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spaceresident</title>
+</head>
+<body class="body">
+<h4>spaceresident</h4>
+<button id="bt" onclick="createElem()">add 1000 elements</button>
+    <script >
+        let bt = document.querySelector("#bt");
+        let body = document.querySelector('.body');
+        function createElem(){
+            let article = document.createElement('article')
+            for (let i = 0; i <= 999; i++){
+                let div = document.createElement('div')
+                div.setAttribute('id', 'i' + i)
+                article.append(div)
+            }
+            body.append(article)
+        }
+    </script>
+</body>
+</html>
